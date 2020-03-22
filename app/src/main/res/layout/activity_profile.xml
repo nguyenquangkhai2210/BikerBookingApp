@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="20dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:hint="Thư điện tử"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/edittext_outline"
+        android:layout_marginTop="25dp"
+        />
+    <EditText
+        android:id="@+id/txtFullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Họ và Tên"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_menu_edit"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/edittext_outline"
+        android:layout_marginTop="25dp"
+        />
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật khẩu"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_lock_lock"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/edittext_outline"
+        android:layout_marginTop="25dp"
+        android:inputType="textPassword"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="80dp">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Cập nhật"
+        android:background="@drawable/button_outline"
+        android:textColor="@android:color/black"
+        android:onClick="clickToUpdateProfile"
+        />
+</LinearLayout>
+
+</LinearLayout>

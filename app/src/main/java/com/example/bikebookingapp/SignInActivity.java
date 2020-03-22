@@ -28,7 +28,7 @@ public class SignInActivity extends AppCompatActivity {
         e2_password = findViewById(R.id.editText2);
         auth = FirebaseAuth.getInstance();
         dialog = new ProgressDialog(this);
-
+        auth.updateCurrentUser()
     }
 
     public void signinUser(View v) {

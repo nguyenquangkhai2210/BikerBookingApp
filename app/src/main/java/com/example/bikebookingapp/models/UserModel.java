@@ -3,26 +3,22 @@ package com.example.bikebookingapp.models;
 import java.io.Serializable;
 
 public class UserModel implements Serializable {
-    private String id, fullname, email, password;
+    private String fullname, email, password;
 
     public UserModel() {
 
     }
 
-    public UserModel(String id, String fullname, String email, String password) {
-        this.id = id;
+    public UserModel( String fullname, String email, String password) {
+
         this.fullname = fullname;
         this.email = email;
         this.password = password;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
+
 
     public String getFullname() {
         return fullname;
