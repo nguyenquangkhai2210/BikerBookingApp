@@ -14,11 +14,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
     EditText e1_name, e2_email, e3_password;
     FirebaseAuth auth;
     ProgressDialog dialog;
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
         String email = e2_email.getText().toString();
         String password = e3_password.getText().toString();
 
-        if(name.equals("") || email.equals("") || password.equals("")){
+        if(name.equals("") || email.equals("") && password.equals("")){
             Toast.makeText(getApplicationContext(), "Fields  cannot be empty", Toast.LENGTH_SHORT).show();
         } else {
             auth.createUserWithEmailAndPassword(email, password)
@@ -51,6 +56,21 @@ public class SignUpActivity extends AppCompatActivity {
                                 dialog.hide();
                                 Toast.makeText(getApplicationContext(), "User registered successfully", Toast.LENGTH_SHORT).show();
 
+                                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+                                Users users_obj = new Users( e1_name.getText().toString(), e2_email.getText().toString(), e3_password.getText().toString());
+                                FirebaseUser firebaseUser = auth.getCurrentUser();
+                                databaseReference.child(firebaseUser.getUid()).setValue(users_obj).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(getApplicationContext(), "User data saved", Toast.LENGTH_LONG).show();
+                                            Intent myIntent = new Intent(SignUpActivity.this, MainPageActivity.class);
+                                            startActivity(myIntent);
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "User data could not be saved", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
 
                             } else {
                                 dialog.hide();

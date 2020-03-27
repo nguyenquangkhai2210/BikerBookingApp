@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bookingapp.DriverLoginActivity"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Thư điện tử"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_marginTop="25dp"
+        android:id="@+id/email"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="17dp"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_marginTop="25dp"
+        android:inputType="textPassword"
+        android:hint="Mật khẩu"
+        android:id="@+id/password"/>
+    <Button
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:id="@+id/login"/>
+    <Button
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí"
+        android:id="@+id/registration"/>
+</LinearLayout>

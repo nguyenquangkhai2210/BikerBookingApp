@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bookingapp.CustomerSettingsActivity"
+    android:orientation="vertical"
+    android:padding="20sp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_menu_edit"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_marginTop="25dp"
+        android:hint="Họ và tên"
+        android:layout_marginBottom="20sp"/>
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/ic_phone"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/button_outline"
+        android:hint="Số điện thoai"
+        android:layout_marginBottom="20sp"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:drawableLeft="@android:drawable/ic_menu_add"
+        android:drawableTint="@color/cardview_dark_background"
+        android:drawablePadding="15dp"
+        android:background="@drawable/button_outline"
+        android:hint="Tên xe"
+        android:layout_marginBottom="20sp"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bike"
+            android:id="@+id/UberX"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car"
+            android:id="@+id/UberBlack"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirm"
+        android:text="Cập nhật"/>
+    <Button
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        android:text="Quay về"/>
+
+</LinearLayout>

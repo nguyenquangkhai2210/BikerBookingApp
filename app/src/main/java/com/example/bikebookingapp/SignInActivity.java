@@ -35,7 +35,7 @@ public class SignInActivity extends AppCompatActivity {
         dialog.setMessage("Signing in, Please wait");
         dialog.show();
 
-        if(e1_email.getText().toString().equals("") || e2_password.getText().toString().equals("")){
+        if(e1_email.getText().toString().equals("") && e2_password.getText().toString().equals("")){
             Toast.makeText(getApplicationContext(), "Fields  cannot be empty", Toast.LENGTH_SHORT).show();
         } else {
             auth.signInWithEmailAndPassword(e1_email.getText().toString(), e2_password.getText().toString())
