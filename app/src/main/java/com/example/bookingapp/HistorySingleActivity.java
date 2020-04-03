@@ -126,7 +126,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
                             if(!driverId.equals(currentUserId)){
                                 userDriverOrCustomer = "Customers";
                                 getUserInformation("Drivers", driverId);
-                                displayCustomerRelatedObjects();
+//                                displayCustomerRelatedObjects();
                             }
                         }
                         if (child.getKey().equals("timestamp")){
@@ -172,12 +172,12 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
                 mDriverRatingDb.child(rideId).setValue(rating);
             }
         });
-        mPay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                payPalPayment();
-            }
-        });
+//        mPay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                payPalPayment();
+//            }
+//        });
     }
 
     private int PAYPAL_REQUEST_CODE = 1;
@@ -248,7 +248,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
         return date;
     }
     private void getRouteToMarker() {
-        Routing routing = new Routing.Builder()
+        Routing routing = new Routing.Builder().key("AIzaSyA3-5UBrlTORGLReQRJZAwcy2LYbB46Sa0")
                 .travelMode(AbstractRouting.TravelMode.DRIVING)
                 .withListener(this)
                 .alternativeRoutes(false)
@@ -285,7 +285,8 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
         LatLngBounds bounds = builder.build();
 
         int width = getResources().getDisplayMetrics().widthPixels;
-        int padding = (int) (width*0.2);
+        int padding = (int) (width*0.01);
+        System.out.println("padding" + padding);
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, padding);
 
